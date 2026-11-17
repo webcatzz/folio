@@ -1,0 +1,41 @@
+body {
+	margin: 144px 24px;
+}
+
+#main {
+	max-width: 400px;
+	margin-inline: auto;
+}
+
+h1 {
+	font-size: 1.25em;
+
+	&::before {
+		content: "";
+		display: inline-block;
+		vertical-align: -0.0625em;
+		background-color: var(--color-accent);
+		width: 0.75em;
+		height: 0.75em;
+		border-radius: 5px;
+		margin-inline-end: 0.67em;
+	}
+}
+
+#links {
+	list-style-type: none;
+	padding-inline-start: 1em;
+
+	.svg-icon {
+		vertical-align: -0.125em;
+		margin-inline-end: 0.125em;
+	}
+
+	li {
+		margin-block: 0.125em;
+	}
+
+	a {
+		text-decoration: underline;
+	}
+}

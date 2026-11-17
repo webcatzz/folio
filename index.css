@@ -1,0 +1,135 @@
+body {
+	background:
+		radial-gradient(var(--color-bg) 50%, transparent) fixed,
+		url(res/bg.png) center / 100% ;
+}
+
+#landing {
+	max-width: min-content;
+	margin: 144px auto;
+	flex: 1;
+}
+
+#landing-title {
+	--j-outset: 2.725rem;
+
+	line-height: 1;
+	padding-inline-start: var(--j-outset);
+	align-self: center;
+}
+
+#landing-title-intro {
+	font-size: 2em;
+	margin-block-end: -0.67em;
+}
+
+#landing-title-name {
+	font-size: 8em;
+	margin-block: 0;
+	margin-inline-start: calc(var(--j-outset) * -1);
+}
+
+#landing-title-outro {
+	font-size: 2em;
+	margin-block-start: 0.125em;
+}
+
+#landing-demo {
+	width: 400px;
+	height: 400px;
+	background-color: rgb(from black r g b / 0.1);
+	border-radius: 12px;
+	justify-self: end;
+	align-self: center;
+
+	> img {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+}
+
+#about {
+	font-size: 1.25em;
+	margin-block-start: 48px;
+
+	position: sticky;
+	top: 48px;
+}
+
+#links {
+	list-style-type: none;
+	padding-inline-start: 1em;
+
+	.svg-icon {
+		vertical-align: -0.125em;
+		margin-inline-end: 0.125em;
+	}
+
+	li {
+		margin-block: 0.125em;
+	}
+
+	a {
+		text-decoration: underline;
+	}
+}
+
+.button {
+	background-color: hsl(0, 0%, 0%, 0.1);
+	padding: 0.5em 1em;
+	border-radius: 0.9em;
+	max-width: max-content;
+	cursor: pointer;
+}
+
+#projects {
+	max-width: 600px;
+	margin-inline: auto;
+	flex: 4;
+
+	article {
+		margin-block: 48px;
+
+		&:first-child { margin-block-start: 0 }
+		&:last-child { margin-block-end: 0 }
+	}
+
+	img {
+		width: 100%;
+		object-fit: cover;
+		border-radius: 10px;
+	}
+
+	h3 {
+		font-size: 3em;
+		margin-block: 12px;
+		grid-column: 1 / 3;
+	}
+
+	p {
+		font-size: 1.25em;
+		margin-block: 0;
+		grid-column: 1 / 3;
+	}
+}
+
+#projects-title {
+	font-size: 2em;
+}
+
+.project-images {
+	display: flex;
+	gap: 12px;
+	background-color: rgb(from var(--color-accent) r g b / 0.5);
+	padding: 12px;
+	border-radius: 22px;
+	margin-inline: -24px;
+}
+
+@media (max-width: 600px) {
+	#projects {
+		max-width: unset;
+		margin-inline: 48px;
+	}
+}

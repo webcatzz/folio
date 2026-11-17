@@ -1,0 +1,128 @@
+@keyframes fade-in {
+	from { opacity: 0 }
+}
+
+:root {
+	--color-text: hsl(0, 0%, 20%);
+	--color-text-faint: hsl(0, 0%, 60%);
+	--color-bg: hsl(0, 0%, 99%);
+	--color-bg-2: hsl(0, 0%, 90%);
+	--color-accent: lightblue;
+}
+
+::selection {
+	background-color: rgb(from var(--color-accent) r g b / 0.67);
+}
+
+body {
+	color: var(--color-text);
+	font-family: "Inter", "Helvetica Neue", sans-serif;
+	background-color: var(--color-bg);
+	margin: 0;
+}
+
+summary {
+	cursor: pointer;
+}
+
+img {
+	display: block;
+}
+
+iframe {
+	border: none;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.pixel {
+	image-rendering: pixelated;
+}
+
+.glass-button, .card {
+	letter-spacing: 0.03125em;
+	text-shadow: 0 0 0.75em var(--tint, white);
+	background-color: rgb(from var(--tint, white) r g b / 0.67);
+	backdrop-filter: blur(3px);
+	box-shadow:
+		1px 0 1px var(--tint, white) inset,
+		-1px 0 1px var(--tint, white) inset,
+		0 0 2px var(--tint, white) inset,
+		0 16px 64px -8px rgb(from color-mix(in srgb, var(--color-text), var(--color-accent)) r g b / 0.5);
+}
+
+.glass-button {
+	display: flex;
+	align-items: center;
+	gap: 0.33em;
+	font-size: 0.875em;
+	padding: 0.33rem 1.33rem;
+	border-radius: 1em;
+	transition:
+		padding-inline 1s cubic-bezier(0.075, 0.635, 0.245, 1.080),
+		color 0.0625s;
+
+	&:hover {
+		padding-inline: 1.67rem;
+		transition-duration: 0.5s, 0.0625s;
+	}
+
+	&:active {
+		color: transparent;
+	}
+}
+
+.card {
+	display: grid;
+	grid-template-rows: 2fr 1fr;
+	gap: 12px;
+	padding: 24px;
+	aspect-ratio: 3 / 4;
+	border-radius: 10px;
+
+	> img {
+		width: 100%;
+		height: 100%;
+		contain: size;
+		border-radius: 10px;
+		filter: blur(6px);
+		opacity: 0.33;
+		contain: paint;
+		overflow: hidden;
+	}
+}
+
+.card-title {
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+.svg-icon {
+	width: 1em;
+	height: 1em;
+}
+
+#menu {
+	display: flex;
+	justify-content: center;
+	padding: 24px;
+	position: fixed;
+	inset-block-start: 0;
+	inset-inline: 0;
+	z-index: 99;
+	animation: fade-in 0.67s 0.67s backwards;
+}
+
+#footer {
+	color: color-mix(in srgb, var(--color-text) 33%, var(--color-bg-2));
+	font-size: 1.5em;
+	font-weight: bold;
+	background-color: var(--color-bg-2);
+	padding: 48px 72px;
+	border-radius: 20px;
+	margin: 24px;
+	margin-block-start: 96px;
+}
